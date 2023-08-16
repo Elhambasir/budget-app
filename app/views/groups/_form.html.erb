@@ -1,0 +1,88 @@
+<style>
+/* Overall styles */
+body {
+  font-family: sans-serif;
+  background-color: #ffffff;
+}
+
+/* Form styles */
+form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+form .error {
+  color: red;
+}
+
+/* Error messages */
+.error-messages {
+  margin: 0 0 20px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f2dede;
+}
+
+.error-messages h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.error-messages ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.error-messages li {
+  margin-bottom: 5px;
+}
+
+</style>
+<%= form_with(model: group) do |form| %>
+  <% if group.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+        <% group.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :icon, style: "display: block" %>
+    <%= form.text_field :icon %>
+  </div>
+
+  <div>
+    <%= form.label :author_id, style: "display: block" %>
+    <%= form.text_field :author_id, value:"#{1}" %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
