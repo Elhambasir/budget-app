@@ -11,17 +11,4 @@ class User < ApplicationRecord
   validates :full_name, presence: true, length: { minimum: 3 }
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
-
-  def most_recent_expense
-    expenses.order(created_at: :desc).limit(3)
-  end
-
-  def most_ancient_expense
-    expenses.order(created_at: :asc).limit(3)
-  end
-
-  def total_expense
-    expenses.sum(:amount)
-  end
-
 end
