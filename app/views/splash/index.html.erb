@@ -1,14 +1,12 @@
-<div class="container-fluid text-center bg-dark d-flex justify-content-center">
-  <div class="form-container">
-      <div class="bg-light d-flex flex-column" style="width:19rem; height:100vh;">
-         <div class="body flex-fill bg-light d-flex flex-column justify-content-center ">
-            <h3>BUDGET</h3>
-            <p>Welcom to budget manager app!</p>
-         </div>
-         <div class="footer p-2">
-            <%= link_to "LOG IN", new_user_session_path, class:"btn btn-primary form-control mb-1" %>
-            <%= link_to "SIGN UP", new_user_registration_path, class:"btn btn-light text-secondary form-control"%>
-         </div>
-      </div>
-  </div>
+<div class="container-fluid">
+<div class="row bg-light d-flex flex-column align-items-center text-center" style="height:100vh;">
+   <div class="col flex-fill bg-light d-flex flex-column justify-content-center ">
+      <h3>BUDGET</h3>
+      <p>Welcom to budget manager app!</p>
+   </div>
+   <div class="">
+      <%= link_to "LOG IN", new_user_session_path, class:"btn btn-primary form-control mb-1" %>
+      <%= link_to "SIGN UP", new_user_registration_path, class:"btn btn-light text-secondary form-control"%>
+   </div>
+</div>
 </div>
