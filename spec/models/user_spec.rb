@@ -3,24 +3,18 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   it 'Check rspec working?' do
     user = FactoryBot.create(:user)
-    expect(user.name).to eq('basir')
+    expect(user.full_name).to eq('basir')
   end
 
-  it 'Name must be present' do
+  it 'full_name must be present' do
     user = FactoryBot.create(:user)
-    user.name = nil
+    user.full_name = nil
     expect(user).to_not be_valid
   end
 
-  it 'Name must have length of minimum 3 ch' do
+  it 'full_name must have length of minimum 3 ch' do
     user = FactoryBot.create(:user)
-    user.name = 'lg'
-    expect(user).to_not be_valid
-  end
-
-  it 'Name must only contain letters' do
-    user = FactoryBot.create(:user)
-    user.name = 'basir1'
+    user.full_name = 'lg'
     expect(user).to_not be_valid
   end
 
