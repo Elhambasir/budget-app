@@ -153,7 +153,9 @@ If you like this project, leave a star
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank the Microverse community and The [Creative Commons license of the design](https://creativecommons.org/licenses/by-nc/4.0/) for such a great design
+This project is based on the original design by [Gregoire Vella on Behance](https://www.behance.net/gregoirevella). The design is licensed under the Creative Commons Attribution-NonCommercial 4.0 International [License](https://creativecommons.org/licenses/by-nc/4.0/).
+
+I would like to thank Gregoire Vella for his beautiful design. I have made some modifications to the design, but I would not have been able to create this project without his original work.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
