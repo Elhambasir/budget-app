@@ -105,7 +105,7 @@ Example command:
 
 - [Live](comming soon)
 
-- Demo [video](comming soon)
+- Demo [video](https://www.loom.com/share/a0dd5f383ad241f3a3e7681e60fb4350?sid=eb746e2f-4ce6-468e-9a54-dcc78763c837)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
