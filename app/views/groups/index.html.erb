@@ -1,0 +1,25 @@
+
+<%= render "shared/header" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="list-group">
+        <% @groups.each do |item| %>
+          <li class="list-group-item m-1 bg-light">
+            <%= link_to(
+                  raw("<img src='#{item.icon}' class='' width='30'> <span>#{item.name}</span> <span class='float-right'>$#{item.expenses.sum(:amount)}</span>"),
+                  group_expenses_path(group_id:item.id),
+                  class: "nav-link d-flex flex-row align-items-center justify-content-between "
+                )%>
+          </li>
+        <% end %>
+      </ul>
+      <div class="row">
+        <div class="col-md-12">
+        <%= link_to "Add new group", new_group_path, class:"" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
