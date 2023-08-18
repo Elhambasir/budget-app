@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "expense/index", type: :feature do
+RSpec.describe 'expense/index', type: :feature do
   before(:each) do
     @user = FactoryBot.create(:user)
     @user.save
@@ -11,14 +11,14 @@ RSpec.describe "expense/index", type: :feature do
     sign_in @user
   end
 
-  after do 
+  after do
     User.destroy_all
   end
 
-  scenario "Login" do
-    visit new_user_session_path  
+  scenario 'Login' do
+    visit new_user_session_path
     click_link @group.name
     expect(page).to have_current_path(group_expenses_path(@group))
-    expect(page).to have_content("TRANSACTIONS")
+    expect(page).to have_content('TRANSACTIONS')
   end
 end
