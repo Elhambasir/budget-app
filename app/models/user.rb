@@ -23,5 +23,4 @@ class User < ApplicationRecord
   def total_expense
     expenses.sum(:amount)
   end
-
 end

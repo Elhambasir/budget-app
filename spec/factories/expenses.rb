@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :expense do
-    name { "test" }
+    name { 'test' }
     amount { 22 }
     association :author, factory: :user
   end
