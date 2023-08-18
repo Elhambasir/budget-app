@@ -1,25 +1,20 @@
 
 <%= render "shared/header" %>
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="list-group">
-        <% @groups.each do |item| %>
-          <li class="list-group-item m-1 bg-light">
-            <%= link_to(
-                  raw("<img src='#{item.icon}' class='' width='30'> <span>#{item.name}</span> <span class='float-right'>$#{item.expenses.sum(:amount)}</span>"),
-                  group_expenses_path(group_id:item.id),
-                  class: "nav-link d-flex flex-row align-items-center justify-content-between "
-                )%>
-          </li>
-        <% end %>
-      </ul>
-      <div class="row">
-        <div class="col-md-12">
-        <%= link_to "Add new group", new_group_path, class:"" %>
-        </div>
-      </div>
+<div class="container-fluid">
+  <ul class="list-group">
+  <% @groups.each do |item| %>
+    <li class="list-group-item m-1 bg-light">
+      <%= link_to(
+            raw("<img src='#{item.icon}' class='' width='30'> <span>#{item.name}</span> <span class='float-right'>$#{item.expenses.sum(:amount)}</span>"),
+            group_expenses_path(group_id:item.id),
+            class: "nav-link d-flex flex-row align-items-center justify-content-between "
+          )%>
+    </li>
+  <% end %>
+</ul>
+    <div class="fixed-bottom d-flex justify-content-center align-items-center" style="background: #60B524;height:50px; ">
+      <%= link_to "Add new group", new_group_path, class:"btn text-light fs-6", style:"border:1px solid white; width:95%;" %>
     </div>
-  </div>
 </div>
+
 

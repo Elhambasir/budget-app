@@ -8,13 +8,13 @@
                       )%>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-light" href="#">SIGN UP</a>
+          <a class="nav-link text-light" href="#">REGISTER</a>
         </li>
         <li class="nav-item">
-           <button type="button" id="signup-button" class="btn btn-primary">Sign up</button>
+           <button type="button" id="signup-button" class="btn btn-primary">Next</button>
         </li>
       </ul>
-    <div class="container">
+    <div class="container-fluid">
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), id: "group_form") do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
           <div class="field">
@@ -40,8 +40,6 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password" , class:"form-control"%>
         </div>
       <% end %>
-      <br>
-      <%= render "devise/shared/links" %>
     </div>
 
   <script>
