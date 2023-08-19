@@ -89,4 +89,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  database: my-deploy-test_production
+  username: my-deploy-test
+  password: <%= ENV["MY-DEPPLOY-TEST_DATABASE_PASSWORD"] %>
