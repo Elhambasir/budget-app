@@ -1,22 +1,18 @@
 databases:
-  - name: postgres
-    ipAllowList: []
-    databaseName: my-deploy-test
-    user: my-deploy-test
-    plan: free
-
+  - name: budget
+    databaseName: budget_83of
+    user: budget_83of_user
 
 services:
   - type: web
-    name: rails
-    env: ruby
-    plan: free
+    name: expense
+    runtime: ruby
     buildCommand: "./bin/render-build.sh"
-    startCommand: bundle exec rails s
+    startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: postgres
+          name: budget
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
