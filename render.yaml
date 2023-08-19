@@ -1,7 +1,7 @@
 databases:
   - name: budget
-    databaseName: recipe_app_development_3bs6
-    user: elham
+    databaseName: budget_3064
+    user: budget_3064_use
 
 services:
   - type: web
