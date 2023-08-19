@@ -1,18 +1,18 @@
 databases:
-  - name: budget
-    databaseName: budget_3064
-    user: budget_3064_use
+  - name: micronaut
+    databaseName: micronaut_xuwq
+    user: micronaut_xuwq_user
 
 services:
   - type: web
-    name: budget
+    name: moyin
     runtime: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: budget_3064
+          name: micronaut
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
