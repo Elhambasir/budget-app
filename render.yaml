@@ -1,5 +1,5 @@
 databases:
-  - name: budget
+  - name: recipe_app_development_3bs6
     databaseName: recipe_app_development_3bs6
     user: elham
 
