@@ -1,0 +1,22 @@
+<div id="<%= dom_id group %>">
+
+     <%# <%= image_tag('group_icon.png', alt: "Group icon") %>
+  <ul class="list-group">
+    <li class="list-group-item d-flex flex-row justify-content-between bg-light">
+    <strong><img src="<%=group.icon%>" alt="not found" width="30"/></strong>
+    <strong><%= group.name %></strong>
+    <strong>$
+      <%if locals[:other_object].nil? %>
+        <%= group.expenses.sum(:amount) %>
+      <% else %>
+        <% total = 0%>
+        <% locals[:other_object].each do |item|%>
+        <% total = total+item.amount%>
+        <% end %>
+        <%= total %>
+     <% end %>
+    </strong>
+    </li>
+  </ul>
+</div>
+

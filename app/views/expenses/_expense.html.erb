@@ -1,0 +1,12 @@
+<div id="<%= dom_id expense %>">
+ <ul class="list-group ">
+    <li class="list-group-item d-flex flex-row justify-content-between">
+    <p><img src="<%=@group.icon%>" alt="not found" width="30"></p>
+    <p class="d-flex flex-column m-0">
+    <%= expense.name %>
+    <i class="text-secondary" style="font-size:12px;"><%=expense.created_at.year%>/<%=expense.created_at.day%>/<%=expense.created_at.month%></i>
+    </p>
+    <p>$<%= expense.amount %></p>
+    </li>
+  </ul>
+</div>

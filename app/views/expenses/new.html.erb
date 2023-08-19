@@ -1,0 +1,27 @@
+<ul class="nav d-flex justify-content-between bg-primary mb-1" style="width:100%">
+  <li class="nav-item">
+    <%= link_to(
+                  raw("<i class='fas fa-arrow-left'></i>"),
+                  group_expenses_path,
+                  class: "nav-link text-light border-0"
+                )%>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-light" href="#">NEW TRANSACTIONS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-light" href="#"><i class="fas fa-search"></i></I></a>
+  </li>
+</ul>
+<div class="container-fluid mt-2">
+  <div class="row">
+    <div class="col-md-12">
+      <% if flash[:alert] %>
+        <div class="alert alert-danger">
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+      <%= render "form", expense: @expense %>
+    </div>
+  </div>
+</div>

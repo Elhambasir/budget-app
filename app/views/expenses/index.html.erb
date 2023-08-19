@@ -1,0 +1,51 @@
+<ul class="nav d-flex justify-content-between bg-primary mb-0" style="width:100%">
+  <li class="nav-item">
+    <%= link_to(
+                  raw("<i class='fas fa-arrow-left'></i>"),
+                  groups_path,
+                  class: "nav-link text-light border-0"
+                )%>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-light" href="#">TRANSACTIONS</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link text-light" href="#"><i class="fas fa-search"></i></I></a>
+  </li>
+</ul>
+<ul class="nav nav-tabs justify-content-end mt-0 bg-primary" id="myTab" role="tablist">
+  <li class="nav-item " role="presentation">
+    <button class="nav-link active bg-primary text-light" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Most recent</button>
+  </li>
+  <li class="nav-item " role="presentation">
+    <button class="nav-link bg-primary text-light" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Most ancient</button>
+  </li>
+</ul>
+<div class="tab-content mt-1" id="myTabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="container-fluid">
+      <div id="expenses" class="d-flex flex-column gap-2">
+        <%= render @group, locals: { other_object: @most_recent_expenses } %>
+        <% @most_recent_expenses.each do |expense| %>
+          <%= render expense %>
+        <% end %>
+      </div>
+    </div>
+      <div class="fixed-bottom d-flex justify-content-center align-items-center" style="background: #60B524;height:50px; ">
+        <%= link_to "New expense", new_group_expense_path, class:"btn text-light fs-6", style:"border:1px solid white; width:95%;"  %>
+      </div>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="container-fluid">
+      <div id="expenses" class="d-flex flex-column gap-2">
+        <%= render @group, locals: { other_object: @most_ancient_expenses } %>
+        <% @most_ancient_expenses.each do |expense| %>
+          <%= render expense %>
+        <% end %>
+      </div>
+    </div>
+      <div class="fixed-bottom d-flex justify-content-center align-items-center" style="background: #60B524;height:50px; ">
+        <%= link_to "New expense", new_group_expense_path, class:"btn text-light fs-6", style:"border:1px solid white; width:95%;"  %>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<style>
+.offcanvas.offcanvas-end {
+    top: 0;
+    left:0;
+    width: var(--bs-offcanvas-width);
+    border-left: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
+    transform: translateX(-100%);
+    direction:ltr; 
+}
+</style>
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid" style="direction:rtl;">
+    <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class:"nav-link btn  me-0 text-light" %>
+    <a class="navbar-brand fs-6" href="#">CATEGORIES</a>
+    <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" >
+      <span class="navbar-toggler-icon" style="width:1.2em;"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel" >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="profile d-flex justify-content-center">
+          <div class="card bg-dark border-0 d-flex align-items-center align-items-center" style="width: 15rem;">
+            <div class="img-cover d-flex"  style="width:150px;border-radius:50%; height:150px;overflow:hidden;">
+              <img src="https://media.istockphoto.com/id/1300512215/photo/headshot-portrait-of-smiling-ethnic-businessman-in-office.webp?b=1&s=170667a&w=0&k=20&c=TXCiY7rYEvIBd6ibj2bE-VbJu0rRGy3MlHwxt2LHt9w=" class="card-img-top" alt="...">
+            </div>
+          <div class="card-body">
+            <h5 class="card-title">App user</h5>
+          </div>
+        </div>
+        </div>
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Setting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Notifications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Privacy and policy</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Language</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<br>
