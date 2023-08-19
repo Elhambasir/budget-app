@@ -115,7 +115,7 @@ Example command:
 
 👤 **BasirElham**
 
-- GitHub: [BasirElham](https://github.com/Elhambasir)
+- GitHub: [Elhambasir](https://github.com/Elhambasir)
 - LinkedIn: [BasirElham](https://www.linkedin.com/in/basirelhamahmadi)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
